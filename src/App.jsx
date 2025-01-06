@@ -1,9 +1,9 @@
-import CallApi from './Components/CallApi';
+import GetCharacters from './Components/CallApi';
 
 function App() {
   return (
     <>
-      <CallApi />
+      <GetCharacters />
     </>
   );
 }
