@@ -1,5 +1,11 @@
+import CallApi from './Components/CallApi';
+
 function App() {
-  return <h1>Hello</h1>;
+  return (
+    <>
+      <CallApi />
+    </>
+  );
 }
 
 export default App;
