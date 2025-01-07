@@ -3,30 +3,29 @@ import GetCharacters from './Components/CallApi';
 
 function App() {
   const [trackCharacter, setTrack] = useState([]);
-  const [score, setScore] = useState(0);
   const [clickImage, setClick] = useState('');
+  const [score, setScore] = useState(0);
 
   const handleClick = (e) => {
-    setTrack((prevChar) => [...prevChar, e.target.textContent]);
     setClick(e.target.textContent);
+
+    setTrack((prevChar) => [...prevChar, e.target.textContent]);
 
     trackCharacter.forEach((char) => {
-      if (char === clickImage) {
-        // setScore((prevScore) => prevScore + 1);
-        // setTrack((prevChar) => [...prevChar, clickImage]);
+      if (char !== e.target.textContent) {
+        setScore((prevScore) => prevScore + 1);
+      } else {
+        setScore(0);
         setTrack([]);
-
-        // setScore(0);
       }
     });
-
-    setClick(e.target.textContent);
   };
 
   return (
     <>
-      {console.log(trackCharacter)}
       {console.log(score)}
+      {console.log(clickImage)}
+      {console.log(trackCharacter)}
       <GetCharacters onClick={handleClick} />
     </>
   );
