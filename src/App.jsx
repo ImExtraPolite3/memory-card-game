@@ -33,10 +33,9 @@ function App() {
 
   return (
     <>
-      {console.log(score)}
-      {console.log(clickImage)}
-      {console.log(trackCharacter)}
-      {console.log(bestScore)}
+      <div>{`Current Score: ${score}`}</div>
+      <div>{`Best Score: ${bestScore}`}</div>
+
       <GetCharacters onClick={handleClick} />
     </>
   );
