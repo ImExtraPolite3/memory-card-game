@@ -14,13 +14,7 @@ function App() {
 
     setScore((prevScore) => prevScore + 1);
 
-    setBestScore((prevBest) => {
-      if (prevBest === score) {
-        return prevBest + 1;
-      } else {
-        return prevBest;
-      }
-    });
+    setBestScore((prevBest) => (prevBest === score ? prevBest + 1 : prevBest));
 
     trackCharacter.forEach((char) => {
       if (char === e.target.textContent) {
@@ -36,7 +30,12 @@ function App() {
       <div>{`Current Score: ${score}`}</div>
       <div>{`Best Score: ${bestScore}`}</div>
 
-      <GetCharacters onClick={handleClick} />
+      <div className="gameboard">
+        <GetCharacters
+          onClick={handleClick}
+          num={Math.floor(Math.random() * 25)}
+        />
+      </div>
     </>
   );
 }

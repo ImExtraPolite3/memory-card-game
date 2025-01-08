@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 function Image({ characterId, imgSource, onClick, characterName }) {
   return (
-    <div id={characterId} onClick={onClick} value={characterName}>
+    <div id={characterId} onClick={onClick}>
       <img src={imgSource} alt="" />
       <p>{characterName}</p>
     </div>
   );
 }
 
-export default function GetCharacters({ onClick }) {
+export default function GetCharacters({ onClick, num }) {
   const [callApi, setCallApi] = useState([]);
 
   useEffect(() => {
@@ -23,14 +23,14 @@ export default function GetCharacters({ onClick }) {
     <>
       {callApi
         .filter((api) => api.image !== '')
-        .map((images) => {
+        .map((_, index) => {
           return (
             <Image
-              key={images.id}
-              characterId={images.id}
-              imgSource={images.image}
+              key={callApi[index].id}
+              characterId={callApi[index].id}
+              imgSource={callApi[index].image}
               onClick={onClick}
-              characterName={images.name}
+              characterName={callApi[index].name}
             />
           );
         })}
