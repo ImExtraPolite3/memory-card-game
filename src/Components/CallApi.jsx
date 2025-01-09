@@ -9,7 +9,7 @@ function Image({ characterId, imgSource, onClick, characterName }) {
   );
 }
 
-export default function GetCharacters({ onClick, num }) {
+export default function GetCharacters({ onClick }) {
   const [callApi, setCallApi] = useState([]);
 
   useEffect(() => {
@@ -23,14 +23,14 @@ export default function GetCharacters({ onClick, num }) {
     <>
       {callApi
         .filter((api) => api.image !== '')
-        .map((_, index) => {
+        .map((image) => {
           return (
             <Image
-              key={callApi[index].id}
-              characterId={callApi[index].id}
-              imgSource={callApi[index].image}
+              key={image.id}
+              characterId={image.id}
+              imgSource={image.image}
               onClick={onClick}
-              characterName={callApi[index].name}
+              characterName={image.name}
             />
           );
         })}

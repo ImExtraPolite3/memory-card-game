@@ -31,10 +31,7 @@ function App() {
       <div>{`Best Score: ${bestScore}`}</div>
 
       <div className="gameboard">
-        <GetCharacters
-          onClick={handleClick}
-          num={Math.floor(Math.random() * 25)}
-        />
+        <GetCharacters onClick={handleClick} />
       </div>
     </>
   );
