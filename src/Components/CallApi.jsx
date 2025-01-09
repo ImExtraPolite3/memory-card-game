@@ -11,7 +11,6 @@ function Image({ characterId, imgSource, onClick, characterName }) {
 
 export default function GetCharacters({ onClick }) {
   const [callApi, setCallApi] = useState([]);
-  const random = Math.floor(Math.random() * 25);
 
   useEffect(() => {
     fetch('https://hp-api.onrender.com/api/characters')
@@ -24,17 +23,29 @@ export default function GetCharacters({ onClick }) {
     <>
       {callApi
         .filter((api) => api.image !== '')
-        .map(() => {
+        .map((image) => ({ image, sort: Math.random() }))
+        .sort((a, b) => a.sort - b.sort)
+        .map(({ image }) => {
           return (
             <Image
-              key={callApi[random].id}
-              characterId={callApi[random].id}
-              imgSource={callApi[random].image}
+              key={image.id}
+              characterId={image.id}
+              imgSource={image.image}
               onClick={onClick}
-              characterName={callApi[random].name}
+              characterName={image.name}
             />
           );
         })}
     </>
   );
 }
+
+// return (
+//   <Image
+//     key={image.id}
+//     characterId={image.id}
+//     imgSource={image.image}
+//     onClick={onClick}
+//     characterName={image.name}
+//   />
+// );
