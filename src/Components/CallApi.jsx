@@ -39,13 +39,3 @@ export default function GetCharacters({ onClick }) {
     </>
   );
 }
-
-// return (
-//   <Image
-//     key={image.id}
-//     characterId={image.id}
-//     imgSource={image.image}
-//     onClick={onClick}
-//     characterName={image.name}
-//   />
-// );
