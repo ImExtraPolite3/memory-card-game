@@ -8,7 +8,7 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
 
   const handleClick = (e) => {
-    setClick(e.target.textContent);
+    setClick(e.target);
 
     setTrack((prevChar) => [...prevChar, e.target.textContent]);
 
@@ -27,9 +27,11 @@ function App() {
 
   return (
     <>
+      <div>
+        <h1>Harry Potter Memory Game</h1>
+      </div>
       <div>{`Current Score: ${score}`}</div>
       <div>{`Best Score: ${bestScore}`}</div>
-
       <div className="gameboard">
         <GetCharacters onClick={handleClick} />
       </div>

@@ -9,6 +9,15 @@
   font-family: 'Julius';
 }
 
+#root {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
 .gameboard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -18,11 +27,13 @@
 }
 
 .gameboard > div {
+  border: solid;
+  padding: 3px 0;
   width: 100%;
   text-align: center;
 }
 
 img {
   width: 95%;
-  height: 200px;
+  height: 175px;
 }
