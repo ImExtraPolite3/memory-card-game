@@ -26,7 +26,8 @@
   margin-bottom: 20px;
 }
 
-.gameboard > div {
+.gameboard > button {
+  background: none;
   border: solid;
   padding: 3px 0;
   width: 100%;
@@ -34,6 +35,7 @@
 }
 
 img {
+  z-index: 0;
   width: 95%;
   height: 175px;
 }
