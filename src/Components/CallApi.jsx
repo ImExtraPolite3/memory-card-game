@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 function Image({ characterId, imgSource, onClick, characterName }) {
   return (
-    <div id={characterId} onClick={onClick}>
-      <img src={imgSource} alt="" />
+    <button id={characterId} onClick={onClick} value={characterName}>
+      <img src={imgSource} alt={characterName} />
       <p>{characterName}</p>
-    </div>
+    </button>
   );
 }
 
