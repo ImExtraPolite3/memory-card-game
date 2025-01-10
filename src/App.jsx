@@ -8,16 +8,15 @@ function App() {
   const [bestScore, setBestScore] = useState(0);
 
   const handleClick = (e) => {
-    setClick(e.target);
+    const value = e.currentTarget.value;
 
-    setTrack((prevChar) => [...prevChar, e.target.textContent]);
-
+    setClick(value);
+    setTrack((prevChar) => [...prevChar, value]);
     setScore((prevScore) => prevScore + 1);
-
     setBestScore((prevBest) => (prevBest === score ? prevBest + 1 : prevBest));
 
     trackCharacter.forEach((char) => {
-      if (char === e.target.textContent) {
+      if (char === value) {
         setScore(0);
         setTrack([]);
         setBestScore((prevBest) => prevBest - 1);
@@ -27,6 +26,8 @@ function App() {
 
   return (
     <>
+      {console.log(clickImage)}
+      {console.log(trackCharacter)}
       <div>
         <h1>Harry Potter Memory Game</h1>
       </div>
