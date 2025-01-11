@@ -1,12 +1,12 @@
 @font-face {
   font-family: 'Julius';
-  src: url('JuliusSansOne-Regular.ttf');
+  src: url('/JuliusSansOne-Regular.ttf');
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Julius';
+  font-family: 'Julius', Arial, Helvetica, sans-serif;
 }
 
 #root {
