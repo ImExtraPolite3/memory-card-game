@@ -28,7 +28,7 @@
 
 .gameboard > button {
   background: none;
-  border: solid;
+  border: solid black;
   padding: 3px 0;
   width: 100%;
   text-align: center;
@@ -38,6 +38,7 @@
 .header > div,
 .gameboard > button > p {
   margin: 5px;
+  color: black;
 }
 
 img {
