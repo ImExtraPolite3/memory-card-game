@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Julius';
-  src: url('/JuliusSansOne-Regular.ttf');
+  src: url(/JuliusSansOne-Regular.ttf);
 }
 
 * {
