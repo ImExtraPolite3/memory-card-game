@@ -26,13 +26,11 @@ function App() {
 
   return (
     <>
-      {console.log(clickImage)}
-      {console.log(trackCharacter)}
-      <div>
+      <div className="header">
         <h1>Harry Potter Memory Game</h1>
+        <div>{`Current Score: ${score}`}</div>
+        <div>{`Best Score: ${bestScore}`}</div>
       </div>
-      <div>{`Current Score: ${score}`}</div>
-      <div>{`Best Score: ${bestScore}`}</div>
       <div className="gameboard">
         <GetCharacters onClick={handleClick} />
       </div>
